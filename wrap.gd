@@ -74,7 +74,7 @@ func img_to_addball_grid():
 	img.lock()
 	var bxy_array = []
 	var bxy_string = ""
-	var bxy_space = int(spinspace.value)
+	var bxy_space = int(spinspace.get_line_edit().text)
 	var bxy_size = img.get_size()
 	
 	var elmap = sphere_elevation(bxy_size)
@@ -109,13 +109,14 @@ func rotate_vec3(vec : Vector3):
 	#use this basis for some reason
 	var basis = Basis( Vector3(1,0,0), Vector3(0,1,0), Vector3(0,0,1))
 	
-	#clockwise
-	var roll = spinroll.value
-	var pitch = spinpitch.value
-	var yaw = spinyaw.value
+	#get text because value only updates upon evaluation
+	#if someone clicks a button directly from editing then the values wont be updated
+	var roll = spinroll.get_line_edit().text
+	var pitch = spinpitch.get_line_edit().text
+	var yaw = spinyaw.get_line_edit().text
 	
 	var rotation = Vector3(deg2rad(pitch),deg2rad(yaw),deg2rad(roll))
-	
+	print( rotation.y)
 	# roll > pitch > yaw
 	vec = vec.rotated( basis.z, rotation.z )
 	vec = vec.rotated( basis.x, rotation.x )
@@ -139,7 +140,7 @@ func _on_convertButton_down():
 func _on_paintballzButton_pressed():
 	var new_string = ""
 	for line in textbox.get_line_count():
-		new_string += str(spinparent.value,", ",spinsize.value,", ") + textbox.get_line(line) + ", -1, 0, -1, -1, -1, 0" + "\n"
+		new_string += str(spinparent.get_line_edit().text,", ",spinsize.get_line_edit().text,", ") + textbox.get_line(line) + ", -1, 0, -1, -1, -1, 0" + "\n"
 		#textbox.get_line(line)
 		#pass
 	textbox.text = new_string
