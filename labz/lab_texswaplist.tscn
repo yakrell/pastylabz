@@ -1,0 +1,84 @@
+[gd_scene load_steps=3 format=2]
+
+[ext_resource path="res://ui/theme_regular.tres" type="Theme" id=1]
+[ext_resource path="res://labz/texswaplist.gd" type="Script" id=2]
+
+[node name="texswaplist" type="Control"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+theme = ExtResource( 1 )
+script = ExtResource( 2 )
+
+[node name="hsc" type="HSplitContainer" parent="."]
+anchor_right = 1.0
+anchor_bottom = 1.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="vbc" type="VBoxContainer" parent="hsc"]
+margin_right = 508.0
+margin_bottom = 600.0
+size_flags_horizontal = 3
+
+[node name="labelTexList" type="Label" parent="hsc/vbc"]
+margin_right = 508.0
+margin_bottom = 22.0
+text = "base texture list zone"
+align = 1
+
+[node name="editTexList" type="TextEdit" parent="hsc/vbc"]
+margin_top = 26.0
+margin_right = 508.0
+margin_bottom = 259.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+text = "\\resource\\catz\\example1.bmp 0
+\\resource\\catz\\example2.bmp 0
+\\resource\\catz\\example3.bmp 0"
+show_line_numbers = true
+
+[node name="labelTexSlots" type="Label" parent="hsc/vbc"]
+margin_top = 263.0
+margin_right = 508.0
+margin_bottom = 285.0
+text = "texture slot zone"
+align = 1
+
+[node name="editTexSlots" type="TextEdit" parent="hsc/vbc"]
+margin_top = 289.0
+margin_right = 508.0
+margin_bottom = 522.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+text = "1,2,3"
+show_line_numbers = true
+
+[node name="labelMaximum" type="Label" parent="hsc/vbc"]
+margin_top = 526.0
+margin_right = 508.0
+margin_bottom = 548.0
+text = "maximum permutations"
+align = 1
+
+[node name="spinMaximum" type="SpinBox" parent="hsc/vbc"]
+margin_top = 552.0
+margin_right = 508.0
+margin_bottom = 574.0
+max_value = 7200.0
+value = 7200.0
+
+[node name="butCreateList" type="Button" parent="hsc/vbc"]
+margin_top = 578.0
+margin_right = 508.0
+margin_bottom = 600.0
+text = "create big nasty list"
+
+[node name="editOutput" type="TextEdit" parent="hsc"]
+margin_left = 516.0
+margin_right = 1024.0
+margin_bottom = 600.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+show_line_numbers = true
+
+[connection signal="pressed" from="hsc/vbc/butCreateList" to="." method="_on_butCreateList_pressed"]

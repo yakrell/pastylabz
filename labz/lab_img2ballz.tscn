@@ -44,6 +44,7 @@ margin_right = 441.0
 margin_bottom = 38.0
 
 [node name="vbc" type="VBoxContainer" parent="hsc/vbc"]
+editor/display_folded = true
 margin_top = 42.0
 margin_right = 441.0
 margin_bottom = 150.0
@@ -178,6 +179,7 @@ margin_right = 441.0
 margin_bottom = 192.0
 
 [node name="modifiers" type="TabContainer" parent="hsc/vbc"]
+editor/display_folded = true
 margin_top = 196.0
 margin_right = 441.0
 margin_bottom = 600.0
@@ -310,8 +312,8 @@ size_flags_vertical = 3
 
 [node name="SpinBox" type="SpinBox" parent="hsc/text"]
 visible = false
-margin_right = 665.0
-margin_bottom = 24.0
+margin_right = 575.0
+margin_bottom = 22.0
 
 [node name="TextEdit" type="TextEdit" parent="hsc/text"]
 margin_right = 575.0
