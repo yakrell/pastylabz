@@ -24,46 +24,50 @@ func _on_butCreateList_pressed():
 	#print(slotArray)
 	
 	var outputString = "##"
-#
-#	var permuMax = int(spinMaximum.get_line_edit().text)
-#	var permuCurrent = 1
-#
-#	for texIdx in slotArray[0]:
-#		#append the string backwards
-#		if texArray.size() >= int(texIdx):
-#			outputString = print_permutation(permuCurrent, texArray, texIdx, slotArray.size()) + outputString
-#			permuCurrent+=1
+	var permuMax = int(spinMaximum.get_line_edit().text)
+	var permuCurrent = 1
 	
-	### PLAN PROPERLY ###
-	# find all permutations of each slot, put them in their own arrays nested in a big one
-	var slotArrayPermutations = []
-	for slot in slotArray.size():
-		slotArrayPermutations.append( get_slot_permutations(slotArray, slot, texArray) )
-	print(slotArrayPermutations)
+	var slotArrayPermutations = get_slotarray_permutations(slotArray)
 	
-	#do a while loop until the end of the last slots permutations or hitting the max permutation limit
+	for permutation in slotArrayPermutations:
+		
+		var permuString = str("#",permuCurrent,"\n")
+		for slot in permutation:
+			# -1 to match the line numbers on the textedit :c
+			var texIdx = clamp(int(slot)-1,0,64)
+			var tex = texArray[texIdx] if texArray.size() > texIdx else ";MISSING TEXTURE: NOT FOR RIN KIN"
+			permuString = permuString + str(tex, "\n")
+		
+		#append the string backwards
+		outputString = permuString + outputString
+		permuCurrent +=1
+		if permuCurrent > permuMax:
+			break
+	
 	
 	editOutput.text = outputString
 
+#slotarray stuff by github.com/mel-taylor
+func get_slotarray_permutations(slotArray):
+	var inputArray = []
+	#turn each element in first slotarray into its own array
+	for i in range (slotArray[0].size()):
+		inputArray.append([slotArray[0][i]])
+	#for number of slotarrays, generate new set of permutations
+	for i in range(slotArray.size() - 1):
+		inputArray = get_slot_permutations(inputArray, slotArray[i + 1])
+	#print("output array is: ", inputArray)
+	return inputArray
 
-func get_slot_permutations(slotArray, slot, texArray):
-	var slot_permutation_array = slotArray.duplicate()[slot]
-	for i in slot_permutation_array.size():
-		if texArray.size() >= int(slot_permutation_array[i]) && int(slot_permutation_array[i]) > 0:
-			slot_permutation_array[i] = texArray[int(slot_permutation_array[i])-1]
-		else:
-			slot_permutation_array[i] = ";NOT FOR RIN KIN (invalid texture number)"
-	return slot_permutation_array
-
-
-
-#func print_permutation(permuCurrent, texArray, texIdx, slotsNum):
-#	#build a permutation by putting together the slots
-#	var permutation_string = str("#",permuCurrent,"\n")
-#	for i in slotsNum:
-#		permutation_string += print_slot(permuCurrent, texArray, texIdx)
-#	return permutation_string
-
-#func print_slot(permuCurrent, texArray, texIdx):
-#	#take away one to convert from line number to index
-#	return texArray[int(texIdx)-1] + "\n"
+func get_slot_permutations(prevArray, currentArray):
+	var outputArrays = []
+	#print("current prevArray is ", prevArray)
+	#print("current currentArray is ", currentArray)
+	for i in prevArray.size():
+		for j in currentArray.size():
+			var newArray = prevArray[i].duplicate()
+			newArray.append(currentArray[j])
+			#print("current newArray is: ", newArray)
+			outputArrays.append(newArray.duplicate())
+	#print("current output array is ", outputArrays)
+	return outputArrays
