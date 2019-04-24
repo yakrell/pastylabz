@@ -1,0 +1,332 @@
+[gd_scene load_steps=3 format=2]
+
+[ext_resource path="res://ui/theme_regular.tres" type="Theme" id=1]
+[ext_resource path="res://labz/haloz.gd" type="Script" id=2]
+
+[node name="haloz" type="Control"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+theme = ExtResource( 1 )
+script = ExtResource( 2 )
+
+[node name="bg" type="TextureRect" parent="."]
+modulate = Color( 0.00784314, 0.196078, 0, 1 )
+anchor_right = 1.0
+anchor_bottom = 1.0
+expand = true
+stretch_mode = 2
+
+[node name="hsc" type="HSplitContainer" parent="."]
+anchor_right = 1.0
+anchor_bottom = 1.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="vbc" type="VBoxContainer" parent="hsc"]
+margin_right = 312.0
+margin_bottom = 615.0
+
+[node name="HSeparator3" type="HSeparator" parent="hsc/vbc"]
+margin_right = 312.0
+margin_bottom = 4.0
+
+[node name="Label2" type="Label" parent="hsc/vbc"]
+margin_top = 8.0
+margin_right = 312.0
+margin_bottom = 30.0
+text = "create ring of addballz"
+align = 1
+
+[node name="HSeparator4" type="HSeparator" parent="hsc/vbc"]
+margin_top = 34.0
+margin_right = 312.0
+margin_bottom = 38.0
+
+[node name="HSeparator5" type="HSeparator" parent="hsc/vbc"]
+margin_top = 42.0
+margin_right = 312.0
+margin_bottom = 46.0
+
+[node name="hsep invis2" type="HSeparator" parent="hsc/vbc"]
+modulate = Color( 1, 1, 1, 0 )
+margin_top = 50.0
+margin_right = 312.0
+margin_bottom = 54.0
+
+[node name="vbc" type="VBoxContainer" parent="hsc/vbc"]
+margin_top = 58.0
+margin_right = 312.0
+margin_bottom = 293.0
+
+[node name="gc" type="GridContainer" parent="hsc/vbc/vbc"]
+margin_right = 312.0
+margin_bottom = 22.0
+columns = 4
+
+[node name="labelbase" type="Label" parent="hsc/vbc/vbc/gc"]
+margin_right = 65.0
+margin_bottom = 22.0
+text = "base ball"
+align = 2
+
+[node name="spinbase" type="SpinBox" parent="hsc/vbc/vbc/gc"]
+margin_left = 69.0
+margin_right = 145.0
+margin_bottom = 22.0
+size_flags_vertical = 4
+value = 2.0
+align = 2
+
+[node name="labelstart" type="Label" parent="hsc/vbc/vbc/gc"]
+margin_left = 149.0
+margin_right = 229.0
+margin_bottom = 22.0
+size_flags_horizontal = 6
+text = "start ball id"
+align = 1
+
+[node name="spinstart" type="SpinBox" parent="hsc/vbc/vbc/gc"]
+margin_left = 234.0
+margin_right = 310.0
+margin_bottom = 22.0
+size_flags_horizontal = 6
+size_flags_vertical = 4
+max_value = 512.0
+value = 92.0
+
+[node name="hsep invis" type="HSeparator" parent="hsc/vbc/vbc"]
+modulate = Color( 1, 1, 1, 0 )
+margin_top = 26.0
+margin_right = 312.0
+margin_bottom = 30.0
+
+[node name="HSeparator5" type="HSeparator" parent="hsc/vbc/vbc"]
+margin_top = 34.0
+margin_right = 312.0
+margin_bottom = 38.0
+
+[node name="gc2" type="GridContainer" parent="hsc/vbc/vbc"]
+margin_top = 42.0
+margin_right = 312.0
+margin_bottom = 124.0
+columns = 4
+
+[node name="labelroll" type="Label" parent="hsc/vbc/vbc/gc2"]
+margin_right = 42.0
+margin_bottom = 22.0
+text = "roll° "
+align = 2
+
+[node name="spinroll" type="SpinBox" parent="hsc/vbc/vbc/gc2"]
+margin_left = 46.0
+margin_right = 122.0
+margin_bottom = 22.0
+size_flags_vertical = 4
+min_value = -360.0
+max_value = 360.0
+align = 2
+
+[node name="labelpitch" type="Label" parent="hsc/vbc/vbc/gc2"]
+margin_left = 126.0
+margin_right = 191.0
+margin_bottom = 22.0
+text = "pitch° "
+align = 2
+
+[node name="spinpitch" type="SpinBox" parent="hsc/vbc/vbc/gc2"]
+margin_left = 195.0
+margin_right = 271.0
+margin_bottom = 22.0
+size_flags_vertical = 4
+min_value = -360.0
+max_value = 360.0
+align = 2
+
+[node name="labelyaw" type="Label" parent="hsc/vbc/vbc/gc2"]
+margin_top = 43.0
+margin_right = 42.0
+margin_bottom = 65.0
+text = "yaw° "
+align = 2
+
+[node name="spinyaw" type="SpinBox" parent="hsc/vbc/vbc/gc2"]
+margin_left = 46.0
+margin_top = 43.0
+margin_right = 122.0
+margin_bottom = 65.0
+size_flags_vertical = 4
+min_value = -360.0
+max_value = 360.0
+align = 2
+
+[node name="labeldist" type="Label" parent="hsc/vbc/vbc/gc2"]
+margin_left = 126.0
+margin_top = 26.0
+margin_right = 191.0
+margin_bottom = 82.0
+text = "distance
+from ball
+center"
+align = 2
+
+[node name="spindist" type="SpinBox" parent="hsc/vbc/vbc/gc2"]
+margin_left = 195.0
+margin_top = 43.0
+margin_right = 271.0
+margin_bottom = 65.0
+size_flags_vertical = 4
+max_value = 600.0
+align = 2
+
+[node name="HSeparator6" type="HSeparator" parent="hsc/vbc/vbc"]
+margin_top = 128.0
+margin_right = 312.0
+margin_bottom = 132.0
+
+[node name="gc3" type="GridContainer" parent="hsc/vbc/vbc"]
+margin_top = 136.0
+margin_right = 312.0
+margin_bottom = 201.0
+columns = 4
+
+[node name="labelbsize" type="Label" parent="hsc/vbc/vbc/gc3"]
+margin_right = 86.0
+margin_bottom = 22.0
+text = "ball size"
+align = 2
+
+[node name="spinbsize" type="SpinBox" parent="hsc/vbc/vbc/gc3"]
+margin_left = 90.0
+margin_right = 166.0
+margin_bottom = 22.0
+size_flags_vertical = 4
+min_value = 1.0
+max_value = 600.0
+value = 30.0
+align = 2
+
+[node name="labelrsize" type="Label" parent="hsc/vbc/vbc/gc3"]
+margin_left = 170.0
+margin_right = 232.0
+margin_bottom = 22.0
+text = "ring size"
+align = 2
+
+[node name="spinrsize" type="SpinBox" parent="hsc/vbc/vbc/gc3"]
+margin_left = 236.0
+margin_right = 312.0
+margin_bottom = 22.0
+size_flags_vertical = 4
+min_value = 1.0
+max_value = 600.0
+value = 100.0
+align = 2
+
+[node name="labelreso" type="Label" parent="hsc/vbc/vbc/gc3"]
+margin_top = 26.0
+margin_right = 86.0
+margin_bottom = 65.0
+text = "resolution 
+(no. of ballz)"
+align = 2
+
+[node name="spinreso" type="SpinBox" parent="hsc/vbc/vbc/gc3"]
+margin_left = 90.0
+margin_top = 34.0
+margin_right = 166.0
+margin_bottom = 56.0
+size_flags_vertical = 4
+min_value = 3.0
+max_value = 500.0
+value = 3.0
+align = 2
+
+[node name="labelbcolor" type="Label" parent="hsc/vbc/vbc/gc3"]
+margin_left = 173.0
+margin_top = 34.0
+margin_right = 229.0
+margin_bottom = 56.0
+size_flags_horizontal = 6
+text = "color id"
+align = 1
+
+[node name="spinbcolor" type="SpinBox" parent="hsc/vbc/vbc/gc3"]
+margin_left = 236.0
+margin_top = 34.0
+margin_right = 312.0
+margin_bottom = 56.0
+size_flags_horizontal = 6
+size_flags_vertical = 4
+min_value = 1.0
+max_value = 255.0
+value = 251.0
+
+[node name="PanelContainer" type="PanelContainer" parent="hsc/vbc/vbc"]
+margin_top = 205.0
+margin_right = 312.0
+margin_bottom = 235.0
+
+[node name="ringButton" type="Button" parent="hsc/vbc/vbc/PanelContainer"]
+margin_left = 6.0
+margin_top = 4.0
+margin_right = 306.0
+margin_bottom = 26.0
+size_flags_horizontal = 3
+text = "create ring"
+
+[node name="PanelContainer2" type="PanelContainer" parent="hsc/vbc"]
+margin_top = 297.0
+margin_right = 312.0
+margin_bottom = 327.0
+
+[node name="linezButton" type="Button" parent="hsc/vbc/PanelContainer2"]
+margin_left = 6.0
+margin_top = 4.0
+margin_right = 306.0
+margin_bottom = 26.0
+size_flags_horizontal = 3
+text = "create connecting linez"
+
+[node name="text" type="VBoxContainer" parent="hsc"]
+margin_left = 320.0
+margin_right = 1024.0
+margin_bottom = 615.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="Label3" type="Label" parent="hsc/text"]
+margin_right = 704.0
+margin_bottom = 22.0
+text = "[Add Ball]"
+align = 1
+
+[node name="outputaddballz" type="TextEdit" parent="hsc/text"]
+margin_top = 26.0
+margin_right = 704.0
+margin_bottom = 305.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+show_line_numbers = true
+
+[node name="SpinBox" type="SpinBox" parent="hsc/text"]
+visible = false
+margin_right = 701.0
+margin_bottom = 22.0
+
+[node name="Label4" type="Label" parent="hsc/text"]
+margin_top = 309.0
+margin_right = 704.0
+margin_bottom = 331.0
+text = "[Linez]"
+align = 1
+
+[node name="outputlinez" type="TextEdit" parent="hsc/text"]
+margin_top = 335.0
+margin_right = 704.0
+margin_bottom = 615.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+show_line_numbers = true
+
+[connection signal="pressed" from="hsc/vbc/vbc/PanelContainer/ringButton" to="." method="_on_ringButton_pressed"]
+[connection signal="pressed" from="hsc/vbc/PanelContainer2/linezButton" to="." method="_on_linezButton_pressed"]
