@@ -29,7 +29,7 @@ align = 1
 [node name="editTexList" type="TextEdit" parent="hsc/vbc"]
 margin_top = 26.0
 margin_right = 508.0
-margin_bottom = 259.0
+margin_bottom = 233.0
 size_flags_horizontal = 3
 size_flags_vertical = 3
 text = "\\resource\\catz\\example1.bmp 0
@@ -38,34 +38,49 @@ text = "\\resource\\catz\\example1.bmp 0
 show_line_numbers = true
 
 [node name="labelTexSlots" type="Label" parent="hsc/vbc"]
-margin_top = 263.0
+margin_top = 237.0
 margin_right = 508.0
-margin_bottom = 285.0
+margin_bottom = 259.0
 text = "texture slot zone"
 align = 1
 
 [node name="editTexSlots" type="TextEdit" parent="hsc/vbc"]
-margin_top = 289.0
+margin_top = 263.0
 margin_right = 508.0
-margin_bottom = 522.0
+margin_bottom = 470.0
 size_flags_horizontal = 3
 size_flags_vertical = 3
 text = "1,2,3"
 show_line_numbers = true
 
 [node name="labelMaximum" type="Label" parent="hsc/vbc"]
-margin_top = 526.0
+margin_top = 474.0
 margin_right = 508.0
-margin_bottom = 548.0
+margin_bottom = 496.0
 text = "maximum permutations"
 align = 1
 
 [node name="spinMaximum" type="SpinBox" parent="hsc/vbc"]
+margin_top = 500.0
+margin_right = 508.0
+margin_bottom = 522.0
+max_value = 20000.0
+value = 20000.0
+
+[node name="labelStart" type="Label" parent="hsc/vbc"]
+margin_top = 526.0
+margin_right = 508.0
+margin_bottom = 548.0
+text = "start at #"
+align = 1
+
+[node name="spinStart" type="SpinBox" parent="hsc/vbc"]
 margin_top = 552.0
 margin_right = 508.0
 margin_bottom = 574.0
+min_value = 1.0
 max_value = 7200.0
-value = 7200.0
+value = 1.0
 
 [node name="butCreateList" type="Button" parent="hsc/vbc"]
 margin_top = 578.0
