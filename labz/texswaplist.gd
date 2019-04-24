@@ -4,6 +4,7 @@ onready var editTexList = get_node("hsc/vbc/editTexList")
 onready var editTexSlots = get_node("hsc/vbc/editTexSlots")
 
 onready var spinMaximum = get_node("hsc/vbc/spinMaximum")
+onready var spinStart = get_node("hsc/vbc/spinStart")
 
 onready var editOutput = get_node("hsc/editOutput")
 
@@ -25,7 +26,7 @@ func _on_butCreateList_pressed():
 	
 	var outputString = "##"
 	var permuMax = int(spinMaximum.get_line_edit().text)
-	var permuCurrent = 1
+	var permuCurrent = int(spinStart.get_line_edit().text)
 	
 	var slotArrayPermutations = get_slotarray_permutations(slotArray)
 	
