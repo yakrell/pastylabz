@@ -5,6 +5,7 @@ this is a modding tool for Petz 4 designed to work in conjunction with [LNZ Pro]
 each lab module outputs text for you to paste into the relevant section of an LNZ file
 
 **labz**
- - img2ballz: convert a prepared image to paintballz
- - haloz: make circles of addballz and linez
- - texswaplist: create large numbers of permutations for texture variations
+ * img2ballz: convert a prepared image to paintballz
+ * haloz: make circles of addballz and linez
+ * texswaplist: create large numbers of permutations for texture variations
+     * search algorithmy stuff by [github.com/mel-taylor](https://github.com/mel-taylor)
