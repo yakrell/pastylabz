@@ -24,7 +24,7 @@ size_flags_vertical = 3
 
 [node name="vbc" type="VBoxContainer" parent="hsc"]
 margin_right = 312.0
-margin_bottom = 615.0
+margin_bottom = 600.0
 
 [node name="HSeparator3" type="HSeparator" parent="hsc/vbc"]
 margin_right = 312.0
@@ -175,6 +175,7 @@ margin_top = 43.0
 margin_right = 271.0
 margin_bottom = 65.0
 size_flags_vertical = 4
+min_value = -600.0
 max_value = 600.0
 align = 2
 
@@ -290,7 +291,7 @@ text = "create connecting linez"
 [node name="text" type="VBoxContainer" parent="hsc"]
 margin_left = 320.0
 margin_right = 1024.0
-margin_bottom = 615.0
+margin_bottom = 600.0
 size_flags_horizontal = 3
 size_flags_vertical = 3
 
@@ -303,7 +304,7 @@ align = 1
 [node name="outputaddballz" type="TextEdit" parent="hsc/text"]
 margin_top = 26.0
 margin_right = 704.0
-margin_bottom = 305.0
+margin_bottom = 298.0
 size_flags_horizontal = 3
 size_flags_vertical = 3
 show_line_numbers = true
@@ -314,19 +315,18 @@ margin_right = 701.0
 margin_bottom = 22.0
 
 [node name="Label4" type="Label" parent="hsc/text"]
-margin_top = 309.0
+margin_top = 302.0
 margin_right = 704.0
-margin_bottom = 331.0
+margin_bottom = 324.0
 text = "[Linez]"
 align = 1
 
 [node name="outputlinez" type="TextEdit" parent="hsc/text"]
-margin_top = 335.0
+margin_top = 328.0
 margin_right = 704.0
-margin_bottom = 615.0
+margin_bottom = 600.0
 size_flags_horizontal = 3
 size_flags_vertical = 3
 show_line_numbers = true
-
 [connection signal="pressed" from="hsc/vbc/vbc/PanelContainer/ringButton" to="." method="_on_ringButton_pressed"]
 [connection signal="pressed" from="hsc/vbc/PanelContainer2/linezButton" to="." method="_on_linezButton_pressed"]
