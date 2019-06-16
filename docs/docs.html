@@ -59,6 +59,37 @@
 		</ul>
 </div><br><br>
 
+<h3><b>objwirez</b></h3>
+	convert vertices and lines in .obj files to ballz and linez<br>
+	useful for starting out on complex designs, or making geometric wireframey things<br>
+	<br>
+<div style="margin-left: 40px">
+	<b>.obj and size multiplier</b>
+		<ul>
+			<li>only vertices and lines will be detected - faces are ignored</li>
+			<li>to remove faces in Blender, go into edit mode and select your whole object, then hit X and select Only Faces to delete them</li>
+			<li>with a size multiplier of 10, the default Blender grid is about the size of a standard cat head</li>
+		</ul>
+	<b>rotation</b>
+		<ul>
+			<li>rotation uses aircraft terms (roll, pitch, yaw) and is in degrees</li>
+			<li><image src="rotationguide.png"></li>
+		</ul>
+	<b>parent and start ball</b>
+		<ul>
+			<li>the parent ball is the the ball the wireframe will be attached to</li>
+			<li>the start ball is what the id of the first ball of the wireframe will be in the lnz file - this is needed to connect the linez</li>
+			<li>you can find what the start ball by counting from the last commented ball id in the file, such as ";ears 80"</li>
+			<li>it is good practice to comment your ball id for the start of each chunk of your addball section to keep track</li>
+			<li>if your wireframe comes out broken, you will need to correct the start ball id and create the connecting linez again</li>
+		</ul>
+	<b>ball size and colour</b>
+		<ul>
+			<li>ball size is the size of each ball that makes up the wireframe thing</li>
+			<li>use the ColorChart in the palette folder to find colour id - the palette in Pet Workshop can be inaccurate</li>
+		</ul>
+</div><br><br>
+
 <h3><b>texswaplist</b></h3>
 	exhaustively make a million texture swap variations by defining what textures are allowed in each slot<br>
 	kind of simulates randomly selecting textures per slot<br>
