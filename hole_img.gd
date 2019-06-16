@@ -2,11 +2,16 @@ extends TextureRect
 
 var mouse_over = false
 
+onready var tabcont = get_viewport().get_node("main/TabContainer")
+
 func _ready():
 	get_tree().connect("files_dropped", self, "_files_dropped")
 
 
 func _files_dropped(files, screen):
+	if owner != tabcont.get_child(tabcont.current_tab):
+		return
+	
 	print("dropped")
 	
 	#wait a moment to make sure the global mouse updates

@@ -46,15 +46,15 @@ margin_bottom = 38.0
 [node name="vbc" type="VBoxContainer" parent="hsc/vbc"]
 margin_top = 42.0
 margin_right = 304.0
-margin_bottom = 106.0
+margin_bottom = 116.0
 
 [node name="hbc" type="HBoxContainer" parent="hsc/vbc/vbc"]
 margin_right = 304.0
-margin_bottom = 64.0
+margin_bottom = 74.0
 
 [node name="inputOBJ" type="Panel" parent="hsc/vbc/vbc/hbc"]
-margin_right = 304.0
-margin_bottom = 64.0
+margin_right = 170.0
+margin_bottom = 74.0
 grow_horizontal = 2
 grow_vertical = 2
 rect_min_size = Vector2( 128, 64 )
@@ -76,8 +76,6 @@ text = "(drag n drop
 align = 1
 
 [node name="vbc" type="GridContainer" parent="hsc/vbc/vbc/hbc"]
-editor/display_folded = true
-visible = false
 margin_left = 174.0
 margin_right = 304.0
 margin_bottom = 74.0
@@ -128,17 +126,17 @@ max_value = 360.0
 
 [node name="labelmult" type="Label" parent="hsc/vbc"]
 margin_left = 101.0
-margin_top = 110.0
+margin_top = 120.0
 margin_right = 202.0
-margin_bottom = 132.0
+margin_bottom = 142.0
 size_flags_horizontal = 4
 text = "size multiplier"
 
 [node name="spinmult" type="SpinBox" parent="hsc/vbc"]
 margin_left = 114.0
-margin_top = 136.0
+margin_top = 146.0
 margin_right = 190.0
-margin_bottom = 158.0
+margin_bottom = 168.0
 size_flags_horizontal = 4
 size_flags_vertical = 0
 min_value = 1.0
@@ -147,14 +145,15 @@ value = 10.0
 rounded = true
 
 [node name="HSeparator5" type="HSeparator" parent="hsc/vbc"]
-margin_top = 162.0
+margin_top = 172.0
 margin_right = 304.0
-margin_bottom = 166.0
+margin_bottom = 176.0
 
 [node name="HBoxContainer3" type="HBoxContainer" parent="hsc/vbc"]
-margin_top = 170.0
+editor/display_folded = true
+margin_top = 180.0
 margin_right = 304.0
-margin_bottom = 192.0
+margin_bottom = 202.0
 
 [node name="labelbase" type="Label" parent="hsc/vbc/HBoxContainer3"]
 margin_right = 76.0
@@ -189,10 +188,16 @@ max_value = 512.0
 value = 92.0
 rounded = true
 
-[node name="HBoxContainer" type="HBoxContainer" parent="hsc/vbc"]
-margin_top = 196.0
+[node name="HSeparator6" type="HSeparator" parent="hsc/vbc"]
+margin_top = 206.0
 margin_right = 304.0
-margin_bottom = 218.0
+margin_bottom = 210.0
+
+[node name="HBoxContainer" type="HBoxContainer" parent="hsc/vbc"]
+editor/display_folded = true
+margin_top = 214.0
+margin_right = 304.0
+margin_bottom = 236.0
 alignment = 1
 
 [node name="labelbsize" type="Label" parent="hsc/vbc/HBoxContainer"]
@@ -230,9 +235,10 @@ min_value = 3.0
 value = 100.0
 
 [node name="HBoxContainer2" type="HBoxContainer" parent="hsc/vbc"]
-margin_top = 222.0
+editor/display_folded = true
+margin_top = 240.0
 margin_right = 304.0
-margin_bottom = 244.0
+margin_bottom = 262.0
 alignment = 1
 
 [node name="labelbcol" type="Label" parent="hsc/vbc/HBoxContainer2"]
@@ -271,9 +277,9 @@ max_value = 255.0
 value = 251.0
 
 [node name="PanelContainer" type="PanelContainer" parent="hsc/vbc"]
-margin_top = 248.0
+margin_top = 266.0
 margin_right = 304.0
-margin_bottom = 278.0
+margin_bottom = 296.0
 
 [node name="doitbutton" type="Button" parent="hsc/vbc/PanelContainer"]
 margin_left = 6.0

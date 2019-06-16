@@ -5,11 +5,16 @@ var obj = null
 var mouse_over = false
 onready var label = get_child(0)
 
+onready var tabcont = get_viewport().get_node("main/TabContainer")
+
 func _ready():
 	get_tree().connect("files_dropped", self, "_files_dropped")
 
 
 func _files_dropped(files, screen):
+	if owner != tabcont.get_child(tabcont.current_tab):
+		return
+	
 	print("dropped")
 	#print(Array(files[0].split("\\")).back())
 	label.text = Array(files[0].split("\\")).back()
