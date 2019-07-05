@@ -4,6 +4,8 @@
 this is a modding tool for Petz 4 designed to work in conjunction with [LNZ Pro](http://www.sherlocksoftware.org/page.php?id=14)
 each lab module outputs text for you to paste into the relevant section of an LNZ file
 
+[download release versions](https://github.com/yakrell/pastylabz/releases)
+
 [link to labz documentation](https://github.com/yakrell/pastylabz/blob/master/docs/docs.md)
 
 **labz**
