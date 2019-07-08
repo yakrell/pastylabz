@@ -12,14 +12,15 @@ onready var spinpitch = get_node("hsc/vbc/vbc/hbc/vbc/spinpitch")
 onready var spinyaw = get_node("hsc/vbc/vbc/hbc/vbc/spinyaw")
 
 onready var inputPNG = get_node("hsc/vbc/vbc/hbc/inputPNG")
-onready var spinspace = get_node("hsc/vbc/vbc/hbc/spinspace")
+
+onready var checkspherise = find_node("checkspherise")
+onready var spinspace = find_node("spinspace")
 
 var img = load("res://icon.png").get_data()
 
-var paintballz = true
 
 func _ready():
-	img_to_addball_grid()
+	img_to_ball_grid()
 	#parse_chart()
 	#save_chart()
 	
@@ -40,7 +41,7 @@ func sphere_elevation(size : Vector2):
 	return elevation_map
 
 
-func img_to_addball_grid():
+func img_to_ball_grid():
 	if inputPNG.texture == null:
 		return
 	img = inputPNG.texture.get_data()
@@ -65,17 +66,23 @@ func img_to_addball_grid():
 		for x in bxy_array[y].size():
 			if bxy_array[y][x] != -1:
 				
-				var dir = Vector3( (x-bxy_size.x/2)*bxy_space, (y-bxy_size.y/2)*bxy_space, elmap[x][y]*bxy_space*bxy_size.x)
-				#get text because value only updates upon evaluation
-				#if someone clicks a button directly from editing then the values wont be updated
-				dir = rotate_vec3(dir, float(spinroll.get_line_edit().text), float(spinpitch.get_line_edit().text), float(spinyaw.get_line_edit().text))
-				
-				if paintballz:
-					#well this just works. thats cool
+				if checkspherise.pressed:
+					
+					var dir = Vector3( (x-bxy_size.x/2)*bxy_space, (y-bxy_size.y/2)*bxy_space, elmap[x][y]*bxy_space*bxy_size.x)
+					#get text because value only updates upon evaluation
+					#if someone clicks a button directly from editing then the values wont be updated
+					dir = rotate_vec3(dir, float(spinroll.get_line_edit().text), float(spinpitch.get_line_edit().text), float(spinyaw.get_line_edit().text))
+					
 					bxy_string += str(dir.x,", ",dir.y,", ",dir.z,", ") + str(bxy_array[y][x]) + "\n"
 				else:
-					#retool this one for addballz, no difference yet
-					bxy_string += str(dir.x,", ",dir.y,", ",dir.z,", ") + str(bxy_array[y][x]) + "\n"
+					#some duplicated code here, could be reduced
+					
+					var dir = Vector3( (x-bxy_size.x/2)*bxy_space, (y-bxy_size.y/2)*bxy_space, 0)
+					#get text because value only updates upon evaluation
+					#if someone clicks a button directly from editing then the values wont be updated
+					dir = rotate_vec3(dir, float(spinroll.get_line_edit().text), float(spinpitch.get_line_edit().text), float(spinyaw.get_line_edit().text))
+					
+					bxy_string += str(round(dir.x),", ",round(dir.y),", ",round(dir.z),", ") + str(bxy_array[y][x]) + "\n"
 	
 	textbox.text = bxy_string.trim_suffix("\n")
 
@@ -91,7 +98,7 @@ func _on_wrapButton_pressed():
 
 
 func _on_convertButton_down():
-	img_to_addball_grid()
+	img_to_ball_grid()
 
 
 func _on_paintballzButton_pressed():
